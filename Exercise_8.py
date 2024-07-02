@@ -13,12 +13,12 @@ def game(one, two):
             one == "Scissors" and two == "Rock"):
         print('Player Two wins')
     else:
-        print('Player Two Wins')
+        print('Player One Wins')
 
 
 while True:
-    player_one = input('Player one:')
-    player_two = input('Player two:')
+    player_one = input('Player one:').capitalize()
+    player_two = input('Player two:').capitalize()
 
     game(player_one, player_two)
 
