@@ -5,15 +5,16 @@
 # else:
 #     print("Player ONE wins")
 
-
+player_one_name = input('PLayer One Name: ')
+player_two_name = input('PLayer two Name: ')
 def game(one, two):
     if one == two:
         print('It\'s a tie')
     elif (one == "Rock" and two == "Paper") or (one == "Paper" and two == "Scissors") or (
             one == "Scissors" and two == "Rock"):
-        print('Player Two wins')
+        print(f'Player {player_two_name} wins')
     else:
-        print('Player One Wins')
+        print(f'Player {player_one_name} Wins')
 
 
 while True:

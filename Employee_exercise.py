@@ -14,12 +14,21 @@ class Employee:
         self.pay = int(self.pay * self.raise_amount)
 
 
-employ_1 = Employee('Tom', 'Joy', 'tom.joy@email.com', 5000)
-employ_2 = Employee('Michelle', 'Obama', 'm.obama@email.com', 75000)
+class Developers(Employee):
+    pass
 
-print(employ_1.fullName())
-print(Employee.fullName(employ_2))
 
-print(employ_1.pay)
-employ_1.apply_raise()
-print(employ_1.pay)
+class Managers(Employee):
+    pass
+
+
+employ_1 = Developers('Tom', 'Joy', 'tom.joy@email.com', 5000)
+employ_2 = Developers('Michelle', 'Obama', 'm.obama@email.com', 75000)
+
+print(help(Developers))
+# print(employ_1.fullName())
+# print(Employee.fullName(employ_2))
+#
+# print(employ_1.pay)
+# employ_1.apply_raise()
+# print(employ_1.pay)
