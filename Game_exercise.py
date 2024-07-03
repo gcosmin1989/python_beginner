@@ -1,13 +1,11 @@
 class User:
-    def __init__(self, email):
-        self.email = email
+
     def sign_in(self):
         print('Logged In')
 
 
 class Wizard(User):
-    def __init__(self, name, power, email):
-        super().__init__(email)
+    def __init__(self, name, power):
         self.name = name
         self.power = power
 
@@ -23,23 +21,22 @@ class Archer(User):
     def attack(self):
         print(f'Attacking with arrows left {self.num_arrows}')
 
-
-wizard1 = Wizard('Merlin', 50, 'wiz.ard@email.com')
-archer1 = Archer('Hawk Eye', 100)
-wizard1.sign_in()
-wizard1.attack()
-archer1.sign_in()
-archer1.attack()
+    def arrow_remaining(self):
+        print(f'Arrows remaining {self.num_arrows}')
+    def runFast(self):
+        print('Run really fast')
 
 
-def player_attack(character):
-    character.attack()
+class Hybrid(Wizard, Archer):
+    def __init__(self, name, power, arrows):
+        Archer.__init__(self, name, arrows)
+        Wizard.__init__(self, name, power)
 
 
-player_attack(wizard1)
-player_attack(archer1)
+hybrid1 = Hybrid('HybridBorg', 65, 76)
+hybrid1.runFast()
+hybrid1.arrow_remaining()
 
-for char in [wizard1, archer1]:
-    char.attack()
 
-print(wizard1.email)
+
+
