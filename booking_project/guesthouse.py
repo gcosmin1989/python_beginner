@@ -40,11 +40,12 @@ class GuestHouse(Accommodation):
             print(
                 f"Available Beds for {chosen_guest_house.name} in {chosen_guest_house.city} is {chosen_guest_house.beds} beds at ${chosen_guest_house.price} per night.")
             number_of_beds = int(input('How many beds do you want? '))
-            number_of_days = int(input('How many days do you want to stay?'))
+
             if number_of_beds > chosen_guest_house.beds:
                 print("Not enough beds available.")
                 return
             chosen_guest_house.beds -= number_of_beds
-            print(f"You booked {number_of_beds} beds, the total cost is ${number_of_beds * chosen_guest_house.price}")
+            number_of_days = int(input('How many days do you want to stay?'))
+            print(f"You booked {number_of_beds} beds for {number_of_days} days, the total cost is ${number_of_beds * chosen_guest_house.price * number_of_days}")
         else:
             print("Guest house not found.")

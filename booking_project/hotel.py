@@ -36,11 +36,12 @@ class Hotel(Accommodation):
             chosen_hotel = Hotel.hotels[chosen_hotel_name]
             print(
                 f"Available Rooms for {chosen_hotel.name} in {chosen_hotel.city} is {chosen_hotel.rooms} rooms at ${chosen_hotel.price} per night.")
-            number_of_rooms = int(input('How many rooms do you want? '))
+            number_of_rooms = int(input('How many rooms do you want? \n'))
             if number_of_rooms > chosen_hotel.rooms:
                 print("Not enough rooms available.")
                 return
             chosen_hotel.rooms -= number_of_rooms
-            print(f"You booked {number_of_rooms} rooms, the total cost is ${number_of_rooms * chosen_hotel.price}")
+            number_of_days = int(input('How many days do you want to stay?: \n'))
+            print(f"You booked {number_of_rooms} rooms for {number_of_days} days, the total cost is ${number_of_rooms * chosen_hotel.price * number_of_days}")
         else:
             print("Hotel not found.")
